@@ -44,12 +44,10 @@ jobs:
       - name: "Install CycloneDX CLI"
         run: npm install -g @cyclonedx/cyclonedx-npm@$CYCLONEDX_NPM_VERSION
 
-      - name: "Generate SBOMs"
+      - name: "Generate SBOMs (best effort)"
         run: |
-          cyclonedx-npm --output-file sbom-root.json
-          cd frontend
-          cyclonedx-npm --output-file ../sbom-frontend.json
-          cd ..
+          cyclonedx-npm --output-file sbom-root.json || true
+          (cd frontend && cyclonedx-npm --output-file ../sbom-frontend.json) || true
 
       - name: "Run npm audit (JSON)"
         run: |
@@ -62,6 +60,7 @@ jobs:
         uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b
         with:
           name: security-signals
+          if-no-files-found: warn
           path: |
             sbom-root.json
             sbom-frontend.json

@@ -1,10 +1,22 @@
-* @LegitAJ/platform-team
+# OWASP Juice Shop - CODEOWNERS
 
-# Frontend owners
-/frontend/ @LegitAJ/payments-team
+# Default owner (fallback)
+* @LegitAJ/SecTeam
 
-# Backend API owners
-/routes/ @LegitAJ/auth-team
+# Frontend (Angular UI)
+frontend/ @LegitAJ/web-team
 
-# Shared security libraries
-/lib/ @LegitAJ/platform-team
+# Backend API / route handlers
+routes/ @LegitAJ/api-team
+
+# Shared libraries / security-related helpers
+lib/ @LegitAJ/SecTeam
+
+# Data / seed files
+data/ @LegitAJ/SecTeam
+
+# Tests
+test/ @LegitAJ/SecTeam
+
+# CI / workflows
+.github/ @LegitAJ/SecTeam

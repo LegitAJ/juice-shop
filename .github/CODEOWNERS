@@ -1,3 +1,10 @@
-/vagrant/ @wurstbrot
-/test/cypress/ @ShubhamPalriwala
-/frontend/src/app/score-board @J12934
+* @LegitAJ/platform-team
+
+# Frontend owners
+/frontend/ @LegitAJ/payments-team
+
+# Backend API owners
+/routes/ @LegitAJ/auth-team
+
+# Shared security libraries
+/lib/ @LegitAJ/platform-team
